@@ -6,7 +6,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { PersonalRoutingModule } from './personal-routing.module';
 import { PersonalComponent } from './personal.component';
-import { QuoteService } from './quote.service';
+import { QuoteService } from '../services/quote.service';
 
 @NgModule({
   imports: [
