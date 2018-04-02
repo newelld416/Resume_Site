@@ -4,11 +4,11 @@ import { finalize } from 'rxjs/operators';
 import { QuoteService } from './quote.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-personal',
+  templateUrl: './personal.component.html',
+  styleUrls: ['./personal.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class PersonalComponent implements OnInit {
 
   quote: string;
   isLoading: boolean;

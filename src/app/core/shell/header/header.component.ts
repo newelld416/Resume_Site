@@ -6,12 +6,12 @@ import { I18nService } from '../../i18n.service';
 
 const NAVIGATION_LINKS = [
   {
-    text: 'Home',
+    text: 'Personal',
     route: '/home'
   },
   {
-    text: 'About',
-    route: '/about'
+    text: 'Experience',
+    route: '/experience'
   }
 ];
 

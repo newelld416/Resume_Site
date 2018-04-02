@@ -4,8 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { PersonalRoutingModule } from './personal-routing.module';
+import { PersonalComponent } from './personal.component';
 import { QuoteService } from './quote.service';
 
 @NgModule({
@@ -14,13 +14,13 @@ import { QuoteService } from './quote.service';
     TranslateModule,
     CoreModule,
     SharedModule,
-    HomeRoutingModule
+    PersonalRoutingModule
   ],
   declarations: [
-    HomeComponent
+    PersonalComponent
   ],
   providers: [
     QuoteService
   ]
 })
-export class HomeModule { }
+export class PersonalModule { }

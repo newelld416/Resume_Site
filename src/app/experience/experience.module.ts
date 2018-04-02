@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AboutRoutingModule } from './about-routing.module';
-import { AboutComponent } from './about.component';
+import { ExperienceRoutingModule } from './experience-routing.module';
+import { ExperienceComponent } from './experience.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    AboutRoutingModule
+    ExperienceRoutingModule
   ],
   declarations: [
-    AboutComponent
+    ExperienceComponent
   ]
 })
-export class AboutModule { }
+export class ExperienceModule { }
