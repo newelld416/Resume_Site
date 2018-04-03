@@ -13,6 +13,7 @@ import { PersonalModule } from './personal/personal.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SliderModule } from 'angular-image-slider';
 
 import {
   SocialLoginModule,
@@ -47,7 +48,8 @@ export function getAuthServiceConfigs() {
     PersonalModule,
     LoginModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    SliderModule
   ],
   declarations: [AppComponent],
   providers: [

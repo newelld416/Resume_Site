@@ -18,7 +18,7 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.quoteService.getRandomQuote({ category: 'explicit' })
+    this.quoteService.getRandomQuote()
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((response: any) => {
         this.quote = response.value;

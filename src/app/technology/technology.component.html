@@ -1,3 +1,14 @@
-<p>
-  technology works!
-</p>
+<div class="jumbotron text-center">
+  <div [hidden]="isLoading" class="container-fluid">
+    <ngb-carousel *ngIf="images">
+      <ng-template *ngFor="let image of images; let i = index" ngbSlide>
+        <img class="image" [src]="image" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>Fifth slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <app-loader [isLoading]="isLoading"></app-loader>
+</div>
