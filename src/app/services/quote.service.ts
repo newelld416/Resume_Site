@@ -19,7 +19,7 @@ export class QuoteService {
 
   getRandomQuote(context: RandomQuoteContext): Observable<any> {
     return this.httpClient
-      .get(routes.quote(context))
+      .get('https://api.chucknorris.io/jokes/random?category=explicit')
       .pipe(
         map((body: any) => body),
         catchError(() => of('Error, could not load joke :-('))
