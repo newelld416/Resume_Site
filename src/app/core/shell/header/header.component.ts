@@ -12,6 +12,10 @@ const NAVIGATION_LINKS = [
   {
     text: 'Experience',
     route: '/experience'
+  },
+  {
+    text: 'Technology',
+    route: '/technology'
   }
 ];
 
