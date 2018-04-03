@@ -11,15 +11,19 @@ import { QuoteService } from '../services/quote.service';
 export class PersonalComponent implements OnInit {
 
   quote: string;
+  imageURL: string;
   isLoading: boolean;
 
   constructor(private quoteService: QuoteService) { }
 
   ngOnInit() {
     this.isLoading = true;
-    this.quoteService.getRandomQuote({ category: 'dev' })
+    this.quoteService.getRandomQuote({ category: 'explicit' })
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((quote: string) => { this.quote = quote; });
+      .subscribe((response: any) => {
+        this.quote = response.value;
+        this.imageURL = response.icon_url;
+      });
   }
 
 }

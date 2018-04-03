@@ -9,7 +9,6 @@ const routes = {
 };
 
 export interface RandomQuoteContext {
-  // The quote's category: 'dev', 'explicit'...
   category: string;
 }
 
@@ -18,11 +17,11 @@ export class QuoteService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getRandomQuote(context: RandomQuoteContext): Observable<string> {
+  getRandomQuote(context: RandomQuoteContext): Observable<any> {
     return this.httpClient
       .get(routes.quote(context))
       .pipe(
-        map((body: any) => body.value),
+        map((body: any) => body),
         catchError(() => of('Error, could not load joke :-('))
       );
   }

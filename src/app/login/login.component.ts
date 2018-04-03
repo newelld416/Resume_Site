@@ -6,6 +6,12 @@ import { finalize } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Logger, I18nService, AuthenticationService } from '@app/core';
 
+import {
+    AuthService,
+    FacebookLoginProvider,
+    GoogleLoginProvider
+} from 'angular5-social-login';
+
 const log = new Logger('Login');
 
 @Component({
@@ -23,7 +29,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private socialAuthService: AuthService) {
     this.createForm();
   }
 
@@ -63,6 +70,19 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       remember: true
     });
+  }
+
+  private socialSignIn(socialPlatform: string) {
+    let socialPlatformProvider;
+    if (socialPlatform === 'google') {
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
+
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(`${socialPlatform} sign in data: ${userData}`);
+      }
+    );
   }
 
 }

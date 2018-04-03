@@ -14,6 +14,26 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angular5-social-login';
+
+// Configs
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider('809359342550-9ob4mhik19kcuueegkqvva7bbckcf11a.apps.googleusercontent.com')
+        },
+      ]
+  );
+  return config;
+}
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,10 +46,15 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     PersonalModule,
     LoginModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SocialLoginModule
   ],
   declarations: [AppComponent],
   providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
   ],
   bootstrap: [AppComponent]
 })
