@@ -1,11 +1,11 @@
 <div class="container-fluid">
-    <div class="jumbotron wrap" *ngFor="let card of cards; let i = index">
-      <div class="image-container">
-        <img class="image" src="{{card.imageURL}}" alt="Image Not Found" />
-      </div>
-      <div class="information-container">
-        <h3>{{card.header}}</h3>
-        <p>{{card.content}}</p>
-      </div>
+  <div class="jumbotron wrap" *ngFor="let card of cards; let i = index">
+    <div class="image-container">
+      <img class="image" src="{{card.imageURL}}" alt="Image Not Found" />
+    </div>
+    <div class="information-container">
+      <h3>{{card.header}}</h3>
+      <p>{{card.content}}</p>
     </div>
   </div>
+</div>

@@ -16,6 +16,10 @@ const NAVIGATION_LINKS = [
   {
     text: 'Technology',
     route: '/technology'
+  },
+  {
+    text: 'Articles',
+    route: '/articles'
   }
 ];
 
@@ -52,6 +56,7 @@ export class HeaderComponent implements OnInit {
   get currentLanguage(): string {
     return this.i18nService.language;
   }
+
 
   get languages(): string[] {
     return this.i18nService.supportedLanguages;
