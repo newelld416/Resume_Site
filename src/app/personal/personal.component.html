@@ -1,16 +1,15 @@
 <div class="container-fluid">
   <div class="jumbotron wrap" *ngFor="let card of cards; let i = index">
     <div class="image-container">
-      <img class="image" src="{{card.imageURL}}" alt="angular logo" />
+      <img class="image" src="{{card.imageURL}}" alt="Image Not Found" />
     </div>
-    <br>
-    <br>
     <div class="information-container">
       <h3>{{card.header}}</h3>
-      Phone: <a class="contact-link" href="tel:17344744707">(734) 474-4707</a>
-      &nbsp;
-      Email : <a class="contact-link" href="mailto:newelld@mail.gvsu.edu">newelld@mail.gvsu.edu</a>
-      <br>
+      <div *ngIf="card.showContactInfo">
+        Phone: <a class="contact-link" href="tel:{{unformattedPhoneNumber}}">{{phoneNumber}}</a>&nbsp;
+        Email: <a class="contact-link" href="mailto:{{email}}">{{email}}</a>&nbsp;
+        Facebook: <a class="contact-link" href="{{facebook}}">{{facebook}}</a><br>
+      </div>
       <p>{{card.content}}</p>
     </div>
   </div>

@@ -2,8 +2,14 @@
 
 .navbar {
   margin-bottom: $spacer;
+  background: #6c7e87;
+}
+
+.nav-link {
+  color: black;
 }
 
 .nav-link.dropdown-toggle {
   cursor: pointer;
+
 }

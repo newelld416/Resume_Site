@@ -32,6 +32,7 @@ $page-break: 1540px;
     width: 80%;
     @media (max-width: $page-break) {
       width: auto;
+      padding-top: 40px;
     }
   }
 }
