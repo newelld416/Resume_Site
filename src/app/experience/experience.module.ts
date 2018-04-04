@@ -4,18 +4,15 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { ExperienceRoutingModule } from './experience-routing.module';
 import { ExperienceComponent } from './experience.component';
-import { ModalExampleComponent } from './modal-example/modal-example.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    ExperienceRoutingModule,
-    ModalExampleComponent
+    ExperienceRoutingModule
   ],
   declarations: [
-    ExperienceComponent,
-    ModalExampleComponent
+    ExperienceComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -1,9 +1,5 @@
 <div class="container-fluid">
   <div class="jumbotron text-center">
-    <button type="button" class="btn btn-primary" (click)="openModal($event)">Open Modal</button>
+    <button type="button" class="btn btn-primary">Open Modal</button>
   </div>
 </div>
-
-<amw-modal #experienceModal [title]="'Experience Modal'">
-  <amw-generate-lead *ngIf="experienceModal.isOpen" (onSubmit)="modalSubmitted($event)"></amw-generate-lead>
-</amw-modal>
