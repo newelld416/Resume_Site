@@ -1,0 +1,64 @@
+<div class="app-modal-example">
+
+  <div class="app-modal-example__sponsor-info">
+    <div class="amw-sponsor-image" [class.amw-sponsor-image--loaded]="(sponsorPhoto$|async)?.loaded">
+      <img *ngIf="(sponsorPhoto$|async)?.loaded" [src]="(sponsorPhoto$|async)?.url" alt="">
+    </div>
+    <div class="amw-sponsor">
+      <h2 class="amw-sponsor__name">{{ sponsor.accountName }}</h2>
+      <div class="amw-sponsor__info">
+        <div>{{ (sponsorInfo$|async)?.engagedPhone }} &nbsp;</div>
+        <div>{{ (sponsorInfo$|async)?.ecommAddr }} &nbsp;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-modal-example__form amw-prospect-form">
+    <dl class="amw-prospect-form__field">
+      <dt>First name</dt>
+      <dd>
+        <input type="text"
+               name="firstName"
+               [class.amw-error-input]="errors.firstName"
+               [(ngModel)]="prospect.firstName" />
+        <span *ngIf="errors.firstName" class="amw-error-message">{{ errors.firstName }}</span>
+      </dd>
+    </dl>
+    <dl class="amw-prospect-form__field">
+      <dt>Last name</dt>
+      <dd>
+        <input type="text"
+               name="lastName"
+               [class.amw-error-input]="errors.lastName"
+               [(ngModel)]="prospect.lastName" />
+        <span *ngIf="errors.lastName" class="amw-error-message">{{ errors.lastName }}</span>
+      </dd>
+    </dl>
+    <dl class="amw-prospect-form__field">
+      <dt>Email</dt>
+      <dd>
+        <input type="text"
+               name="email"
+               [class.amw-error-input]="errors.email"
+               [(ngModel)]="prospect.email" />
+        <span *ngIf="errors.email" class="amw-error-message">{{ errors.email }}</span>
+      </dd>
+    </dl>
+    <dl class="amw-prospect-form__field">
+      <dt>Phone</dt>
+      <dd>
+        <input type="text"
+               name="phone"
+               [class.amw-error-input]="errors.phone"
+               [(ngModel)]="prospect.phone" />
+        <span *ngIf="errors.phone" class="amw-error-message">{{ errors.phone }}</span>
+      </dd>
+    </dl>
+  </div>
+
+  <amw-loader [visible]="loader$ | async" [text]="'generating'" [cover]="true"></amw-loader>
+
+  <div class="amw-modal-buttons-wrapper">
+    <button class="small primary" (click)="submit()">Submit</button>
+  </div>
+</div>

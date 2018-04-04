@@ -1,0 +1,18 @@
+<modal #modal modalClass="app-modal {{cssClass}} {{ takeOverMode ? 'take-over' : '' }}" [hideCloseButton]="true" [closeOnEscape]="true"
+  [closeOnOutsideClick]="true" (onOpen)="actionOnOpen($event)" (onClose)="actionOnClose($event)" (onSubmit)="actionOnSubmit($event)">
+
+  <modal-header>
+    <div class="app-modal-header" [class.take-over]="takeOverMode">
+      <h3 *ngIf="!takeOverMode" class="app-modal-header__title">{{title}}</h3>
+      <h6 *ngIf="takeOverMode" class="app-modal-header__close-title">Close</h6>
+      <span class="app-modal-header__close icon-M-close-01" [class.take-over-close-icon]="takeOverMode" (click)="close()">
+      </span>
+    </div>
+  </modal-header>
+
+  <modal-content>
+    <h3 *ngIf="takeOverMode" class="take-over-title">{{title}}</h3>
+    <ng-content></ng-content>
+  </modal-content>
+
+</modal>

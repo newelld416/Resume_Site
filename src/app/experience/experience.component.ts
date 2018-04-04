@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { environment } from '@env/environment';
+import { Modal } from 'ngx-modal';
 
 @Component({
   selector: 'app-experience',
@@ -8,11 +9,18 @@ import { environment } from '@env/environment';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
-
-  version: string = environment.version;
+  @ViewChild('experienceModal') modal: Modal;
 
   constructor() { }
 
   ngOnInit() { }
+
+  openModal() {
+    this.modal.open();
+  }
+
+  modalSubmitted(event: any) {
+    console.log('Modal Submitted');
+  }
 
 }
