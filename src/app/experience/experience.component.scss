@@ -1,0 +1,38 @@
+$page-break: 1540px;
+
+.wrap {
+  display: flex;
+  @media (max-width: $page-break) {
+    flex-direction: column;
+  }
+
+  .image-container {
+    width: 20%;
+    display: flex;
+    vertical-align: middle;
+
+    @media (max-width: $page-break) {
+      width: auto;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .image {
+      width: 200px;
+      height:200px;
+      border-radius: 50%;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+
+  .information-container {
+    width: 80%;
+    @media (max-width: $page-break) {
+      width: auto;
+      padding-top: 40px;
+    }
+  }
+}

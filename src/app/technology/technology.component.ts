@@ -1,26 +1,20 @@
-import { PhotoService } from './../services/photo.service';
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import { environment } from '@env/environment';
-import { finalize } from 'rxjs/operators';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+// This is returning the mocked data to be used in the component
+const data = require('./technology-data.json');
+
 @Component({
   selector: 'app-technology',
   templateUrl: './technology.component.html',
   styleUrls: ['./technology.component.scss']
 })
 export class TechnologyComponent implements OnInit {
-  images: any;
-  isLoading: boolean;
+  cards: {};
 
-  constructor(private httpClient: HttpClient, private photoService: PhotoService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.photoService.getRandomPhoto({ numberOfPhotos: 5, width: 900, height: 500 })
-        .pipe(finalize(() => { this.isLoading = false; }))
-        .subscribe((response: any) => {
-          this.images = response;
-        });
+    this.cards = data.cards;
   }
 
 }
