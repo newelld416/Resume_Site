@@ -1,9 +1,17 @@
 <div class="container-fluid">
-  <div class="jumbotron text-center">
-    <h1>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
-    </h1>
-    <app-loader [isLoading]="isLoading"></app-loader>
-    <q [hidden]="isLoading">{{quote}}</q>
+  <div class="jumbotron wrap" *ngFor="let card of cards; let i = index">
+    <div class="image-container">
+      <img class="image" src="{{card.imageURL}}" alt="angular logo" />
+    </div>
+    <br>
+    <br>
+    <div class="information-container">
+      <h3>{{card.header}}</h3>
+      Phone: <a class="contact-link" href="tel:17344744707">(734) 474-4707</a>
+      &nbsp;
+      Email : <a class="contact-link" href="mailto:newelld@mail.gvsu.edu">newelld@mail.gvsu.edu</a>
+      <br>
+      <p>{{card.content}}</p>
+    </div>
   </div>
 </div>
